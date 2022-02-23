@@ -15,41 +15,25 @@ void setup() {
 }
 
 void loop() {
-  //on tact switch pushed run VisualStudio2022
+  //on tact switch pushed run Autodesk Eagle check github wiki for more info
   while (digitalRead(2) == LOW) {
     Keyboard.press(KEY_LEFT_GUI);
     Keyboard.press('r');delay(100);
     Keyboard.release(KEY_LEFT_GUI);
     Keyboard.release('r');delay(100);
-    Keyboard.println("vs2022");
+    Keyboard.println("eagle");
   
   }
-  //on tact switch pushed switch set selected line in the comment
+  //on tact switch pushed press keys ctr+alt+delete
   while (digitalRead(3) == LOW) {
-    Keyboard.press(KEY_LEFT_CTRL);
-    Keyboard.press('k');delay(250);
-    Keyboard.release('k');
-    Keyboard.release(KEY_LEFT_CTRL);
-    delay(250);
-    Keyboard.press(KEY_LEFT_CTRL);
-    Keyboard.press('c');delay(150);
-    Keyboard.release(KEY_LEFT_CTRL);
-    Keyboard.release('c');
+    Keyboard.press(KEY_LEFT_CTRL); 
+    Keyboard.press(KEY_LEFT_ALT);
+    Keyboard.press(KEY_DELETE);delay(100);
+    Keyboard.release(KEY_LEFT_CTRL); 
+    Keyboard.release(KEY_LEFT_ALT);
+    Keyboard.release(KEY_DELETE);delay(100);
   }
-  //on tact switch pushed switch unset selected line in the comment
-  while (digitalRead(4) == LOW) {
-    Keyboard.press(KEY_LEFT_CTRL);
-    Keyboard.press('k');delay(250);
-    Keyboard.release('k');
-    Keyboard.release(KEY_LEFT_CTRL);
-    delay(250);
-    Keyboard.press(KEY_LEFT_CTRL);
-    Keyboard.press('u');delay(150);
-    Keyboard.release(KEY_LEFT_CTRL);
-    Keyboard.release('u');
-  }
-  //empty key does nothing for now
-  while (digitalRead(5) == LOW) {
+
 
   }
   Keyboard.releaseAll();
