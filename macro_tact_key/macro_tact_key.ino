@@ -15,6 +15,7 @@ void setup() {
 }
 
 void loop() {
+  //on tact switch pushed run VisualStudio2022
   while (digitalRead(2) == LOW) {
     Keyboard.press(KEY_LEFT_GUI);
     Keyboard.press('r');delay(100);
@@ -23,6 +24,7 @@ void loop() {
     Keyboard.println("vs2022");
   
   }
+  //on tact switch pushed switch set selected line in the comment
   while (digitalRead(3) == LOW) {
     Keyboard.press(KEY_LEFT_CTRL);
     Keyboard.press('k');delay(250);
@@ -34,6 +36,7 @@ void loop() {
     Keyboard.release(KEY_LEFT_CTRL);
     Keyboard.release('c');
   }
+  //on tact switch pushed switch unset selected line in the comment
   while (digitalRead(4) == LOW) {
     Keyboard.press(KEY_LEFT_CTRL);
     Keyboard.press('k');delay(250);
@@ -45,12 +48,9 @@ void loop() {
     Keyboard.release(KEY_LEFT_CTRL);
     Keyboard.release('u');
   }
+  //empty key does nothing for now
   while (digitalRead(5) == LOW) {
-    Keyboard.press(KEY_LEFT_GUI);
-    Keyboard.press('r');delay(100);
-    Keyboard.release(KEY_LEFT_GUI);
-    Keyboard.release('r');delay(100);
-    Keyboard.println("minecraft");
+
   }
   Keyboard.releaseAll();
 }
